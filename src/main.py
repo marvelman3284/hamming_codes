@@ -1,14 +1,23 @@
 import numpy as np
+from functools import reduce
+import operator as op
 
-def check_bit(data: np.ndarray):
-    overall_parity = data[0]
-    parity_1 = data[1]
-    parity_2 = data[2]
-    parity_3 = data[4]
-    parity_4 = data[8]
+def hamming(data):
+    data = [i for i, j in enumerate(data) if j]
 
-    print(overall_parity, parity_1, parity_2, parity_3, parity_4)
+    return reduce(op.xor, data)
 
-hamming = np.zeros(16, int)
+data = np.random.randint(0, 2, 16)
 
-check_bit(hamming)
+print(data)
+
+error = hamming(data)
+
+print(error)
+
+data[error] = not data[error]
+
+error = hamming(data)
+
+print(error)
+
