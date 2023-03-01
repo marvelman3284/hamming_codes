@@ -10,7 +10,10 @@ def hamming(data):
 
 
 def print_list(list: np.ndarray) -> None:
-    print(f"[\n  {list[0]},{list[1]},{list[2]},{list[3]},\n  {list[4]},{list[5]},{list[6]},{list[7]},\n  {list[8]},{list[9]},{list[10]},{list[11]},\n  {list[12]},{list[13]},{list[14]},{list[15]}\n]") 
+    print(
+        f"[\n  {list[0]},{list[1]},{list[2]},{list[3]},\n  {list[4]},{list[5]},{list[6]},{list[7]},\n  {list[8]},{list[9]},{list[10]},{list[11]},\n  {list[12]},{list[13]},{list[14]},{list[15]}\n]"
+    )
+
 
 data = np.random.randint(0, 2, 16)
 
